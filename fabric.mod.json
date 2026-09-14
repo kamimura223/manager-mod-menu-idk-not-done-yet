@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "mod-menu-manger",
+	"version": "1.0.0",
+	"name": "Mod Menu Manager",
+	"description": "Manage your mods from inside the game — hide, disable, delete, and re-enable mods directly from the ModMenu interface.",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/mod-menu-manger/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"name.modid.ModMenuManger"
+		],
+		"client": [
+			"name.modid.client.ModMenuMangerClient"
+		],
+		"modmenu": [
+			"name.modid.client.ModMenuMangerClient"
+		]
+	},
+	"mixins": [
+		"mod-menu-manger.mixins.json",
+		{
+			"config": "mod-menu-manger.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"modmenu": "*"
+	}
+}
